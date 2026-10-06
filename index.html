@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompTIA A+ Core 2 - Student A Lab Handout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            color: #333333;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            color: #111111;
+        }
+        /* Style focus indicator for contenteditable blocks */
+        [contenteditable="true"]:focus {
+            outline: 2px solid #005fcc;
+            outline-offset: 4px;
+            background-color: #f4f8fb;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #dddddd;
+            margin: 30px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 contenteditable="true">CompTIA A+ Core 2 (220-1202) Hands-On Lab Program</h1>
+    <p contenteditable="true"><strong>STUDENT A — LAB HANDOUT</strong><br>Infrastructure & Server Role Specialist</p>
+
+    <h2 contenteditable="true">Program Specifications</h2>
+    <table>
+        <tr>
+            <th contenteditable="true">Field</th>
+            <th contenteditable="true">Details</th>
+        </tr>
+        <tr>
+            <td contenteditable="true">Program</td>
+            <td contenteditable="true">CompTIA A+ Core 2 (220-1202)[cite: 6]</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Schedule</td>
+            <td contenteditable="true">3 hours/day | 4 days/week | 12 weeks[cite: 6]</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Your role</td>
+            <td contenteditable="true">Build and maintain all shared infrastructure[cite: 6]</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Lab network</td>
+            <td contenteditable="true">VLAN 11 | 172.16.100.x | Gateway: 172.16.100.1[cite: 6]</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Your devices</td>
+            <td contenteditable="true">OptiPlex 3020 #1 (server) | OptiPlex 3020 #2 (proxy) | MacBook Air[cite: 6]</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Shared devices</td>
+            <td contenteditable="true">QCT Pro Tower #2 available for testing[cite: 6]</td>
+        </tr>
+    </table>
+
+    <h2 contenteditable="true">How to use this handout</h2>
+    <ul>
+        <li contenteditable="true">Each phase builds on the last. Do not skip ahead[cite: 6].</li>
+        <li contenteditable="true">Every task ends with a Verification Checklist — you must confirm each item before moving on[cite: 6].</li>
+        <li contenteditable="true">Document everything: IP addresses, usernames, decisions made, and errors encountered[cite: 6].</li>
+        <li contenteditable="true">Your colleague (Student B) depends on your infrastructure. Coordinate before making changes[cite: 6].</li>
+        <li contenteditable="true">No answers are provided. Use your notes, textbook, and troubleshooting skills[cite: 6].</li>
+    </ul>
+    <hr>
+
+    <h2 contenteditable="true">Phase 1 — OS Installation & Recovery (Weeks 1–3)</h2>
+    <p contenteditable="true">You will perform a clean installation of Windows 10 on your primary workstation, explore the Windows Recovery Environment, and practice creating and restoring system restore points. These are foundational skills for every task that follows[cite: 6].</p>
+
+    <div>
+        <h3 contenteditable="true">Lab 1-A: BIOS/UEFI Exploration</h3>
+        <p contenteditable="true">Before installing any operating system you must understand the firmware interface of your machine[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Boot the OptiPlex 3020 #1 into the BIOS/UEFI setup utility[cite: 6].</li>
+            <li contenteditable="true">Locate and record: the current boot order, the Secure Boot status, and the SATA operation mode[cite: 6].</li>
+            <li contenteditable="true">Change the boot order so that USB boots before the internal drive. Save and exit[cite: 6].</li>
+            <li contenteditable="true">Identify whether the system uses Legacy BIOS or UEFI. Write down how you determined this[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Think about this:</strong></p>
+        <ul>
+            <li contenteditable="true">What is the difference between Legacy BIOS boot and UEFI boot?[cite: 6]</li>
+            <li contenteditable="true">How does Secure Boot affect what operating systems you can install?[cite: 6]</li>
+            <li contenteditable="true">What SATA mode is required for Windows 10 to detect your drive correctly during installation?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Boot order changed and saved successfully[cite: 6]</li>
+            <li contenteditable="true">Boot mode (Legacy / UEFI) identified and documented[cite: 6]</li>
+            <li contenteditable="true">Secure Boot status recorded[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 1-B: Clean Windows 10 Installation</h3>
+        <p contenteditable="true">You will perform a fresh installation of Windows 10 Pro on OptiPlex 3020 #1. Your installation media is a bootable USB drive created with the Microsoft Media Creation Tool[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Boot from the USB drive. Walk through the installation wizard[cite: 6].</li>
+            <li contenteditable="true">When you reach the partitioning screen, delete all existing partitions. Create two partitions: one for the OS (minimum 60 GB, label it C:) and one for data (label it D:). Record the sizes you chose and why[cite: 6].</li>
+            <li contenteditable="true">Complete the installation. Configure a local administrator account. Do not sign in with a Microsoft account[cite: 6].</li>
+            <li contenteditable="true">After the first boot, open Device Manager. Identify any devices showing errors or missing drivers. Research and install any missing drivers[cite: 6].</li>
+            <li contenteditable="true">Document the Windows edition, version number, and build number (Settings > System > About)[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Important Note:</strong> OptiPlex 3020 #1 will later become your Domain Controller. Ensure your partition layout leaves enough space. Do not join a domain or connect to the internet until instructed[cite: 6].</p>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Windows 10 Pro installed and booting normally[cite: 6]</li>
+            <li contenteditable="true">Two partitions created (C: system, D: data)[cite: 6]</li>
+            <li contenteditable="true">Device Manager shows no errors[cite: 6]</li>
+            <li contenteditable="true">Windows version and build number documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 1-C: System Restore Points</h3>
+        <p contenteditable="true">Restore points allow you to roll Windows back to a previous configuration state without affecting personal files. You will create one manually, make changes to the system, then restore it[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Open System Properties and confirm that System Protection is enabled on the C: drive. If it is not, enable it and set an appropriate disk space allocation[cite: 6].</li>
+            <li contenteditable="true">Create a restore point manually. Give it a meaningful description that includes today's date[cite: 6].</li>
+            <li contenteditable="true">Make at least two noticeable changes to the system: install a small application, change a system setting, and add a desktop shortcut[cite: 6].</li>
+            <li contenteditable="true">Use System Restore to roll back to the restore point you created. Confirm the changes you made are gone[cite: 6].</li>
+            <li contenteditable="true">Research and answer: what does System Restore NOT protect? What files and settings are excluded?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">System Protection confirmed enabled on C:[cite: 6]</li>
+            <li contenteditable="true">Restore point created and named[cite: 6]</li>
+            <li contenteditable="true">Changes made and then rolled back successfully[cite: 6]</li>
+            <li contenteditable="true">Exclusions documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 1-D: Windows Recovery Environment (WinRE)</h3>
+        <p contenteditable="true">Windows RE is a recovery platform built into Windows. You must know how to access it and what each tool does[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Access WinRE using the Shift + Restart method from inside Windows. Document this path[cite: 6].</li>
+            <li contenteditable="true">From the WinRE menu, identify and write down all available troubleshooting tools[cite: 6].</li>
+            <li contenteditable="true"><strong>Commands:</strong> Open Command Prompt within WinRE. Run the following commands and document what each one does and what output you see: <code>sfc /scannow</code> | <code>DISM /Online /Cleanup-Image /RestoreHealth</code> | <code>bootrec /scanos</code>[cite: 6]</li>
+            <li contenteditable="true">Use Startup Repair on a machine that is booting normally. Observe the output. What does it report?[cite: 6]</li>
+            <li contenteditable="true">Research: what is the difference between Refresh your PC and Reset your PC in Windows recovery options? When would you use each one?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Warning:</strong> Do not run <code>bootrec /fixmbr</code> or <code>/fixboot</code>. These commands rewrite the master boot record. Only use them if instructed and on the correct machine[cite: 6].</p>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">WinRE accessed and all tools listed[cite: 6]</li>
+            <li contenteditable="true">SFC and DISM outputs documented[cite: 6]</li>
+            <li contenteditable="true">Startup Repair result recorded[cite: 6]</li>
+            <li contenteditable="true">Reset options compared and documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 1-E: Second Machine Preparation</h3>
+        <p contenteditable="true">OptiPlex 3020 #2 will eventually serve as a proxy machine for lab clients. Install Windows 10 Pro on it now using the same process as Lab 1-B. You will not configure it further until Phase 3[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Perform a clean install of Windows 10 Pro on OptiPlex 3020 #2[cite: 6].</li>
+            <li contenteditable="true">Use a single partition for this machine (no data partition needed)[cite: 6].</li>
+            <li contenteditable="true">Set a static IP address: 172.16.100.50 / 255.255.255.0. Do not set a gateway or DNS yet[cite: 6].</li>
+            <li contenteditable="true">Verify that both machines can ping each other by IP address[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">OptiPlex #2 running Windows 10 Pro[cite: 6]</li>
+            <li contenteditable="true">Static IP 172.16.100.50 configured[cite: 6]</li>
+            <li contenteditable="true">Ping between #1 and #2 successful[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <h2 contenteditable="true">Phase 2 — Windows Server 2019 & Active Directory (Weeks 4–6)</h2>
+    <p contenteditable="true">You will install Windows Server 2019 Essentials on OptiPlex 3020 #1, promote it to a Domain Controller, and build the directory infrastructure that all other lab machines will join. Student B cannot join the domain until your DC is fully operational[cite: 6].</p>
+
+    <div>
+        <h3 contenteditable="true">Lab 2-A: Windows Server 2019 Installation</h3>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Install Windows Server 2019 Essentials on OptiPlex 3020 #1. Use the same partition you prepared in Phase 1 or reinstall fresh if directed[cite: 6].</li>
+            <li contenteditable="true">After installation, set a static IP address: 172.16.100.10 / 255.255.255.0. Set the gateway to 172.16.100.1 and set the DNS server to 127.0.0.1[cite: 6].</li>
+            <li contenteditable="true">Set the computer name to DC01 before promotion[cite: 6].</li>
+            <li contenteditable="true">Run Windows Update and document which updates were applied[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Server 2019 installed and booting[cite: 6]</li>
+            <li contenteditable="true">Computer name set to DC01[cite: 6]</li>
+            <li contenteditable="true">Static IP 172.16.100.10 configured[cite: 6]</li>
+            <li contenteditable="true">Windows Update run and patches documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 2-B: Active Directory Domain Services</h3>
+        <p contenteditable="true">You will add the AD DS role and promote DC01 to a Domain Controller. This creates your lab domain[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Open Server Manager. Add the Active Directory Domain Services role[cite: 6].</li>
+            <li contenteditable="true">After role installation, promote the server to a Domain Controller. Create a new forest with the domain name lab.local[cite: 6].</li>
+            <li contenteditable="true">After the reboot, verify that DNS is working. Open DNS Manager and confirm the lab.local forward lookup zone exists[cite: 6].</li>
+            <li contenteditable="true">In Active Directory Users and Computers, create the following Organizational Units: IT, Students, Computers[cite: 6].</li>
+            <li contenteditable="true">Create two domain user accounts: studentA (place in Students OU) and studentB (place in Students OU). Set passwords that meet complexity requirements[cite: 6].</li>
+            <li contenteditable="true">Explain in your documentation: what is the difference between a local account and a domain account?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">AD DS role installed[cite: 6]</li>
+            <li contenteditable="true">DC01 promoted, domain lab.local active[cite: 6]</li>
+            <li contenteditable="true">DNS forward lookup zone confirmed[cite: 6]</li>
+            <li contenteditable="true">OUs created: IT, Students, Computers[cite: 6]</li>
+            <li contenteditable="true">User accounts studentA and studentB created[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 2-C: DHCP Server</h3>
+        <p contenteditable="true">Configure a DHCP scope so that machines joining the lab network receive addresses automatically. You must ensure your scope does not conflict with any existing network equipment[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Add the DHCP Server role in Server Manager[cite: 6].</li>
+            <li contenteditable="true">Create a scope named Lab Scope with the following range: 172.16.100.50 to 172.16.100.100. Subnet mask: 255.255.255.0. Default gateway: 172.16.100.1. DNS: 172.16.100.10[cite: 6].</li>
+            <li contenteditable="true">Add exclusions for any static IP addresses already assigned (your server at .10, proxy at .50, and Student B's machines)[cite: 6].</li>
+            <li contenteditable="true">Authorize the DHCP server in Active Directory[cite: 6].</li>
+            <li contenteditable="true">Verify that a test machine receives a lease. Document the lease details[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Network Conflict Reminder:</strong> Your lab is on VLAN 11 (172.16.100.x). The school network operates on 192.168.40.x. Lab ports on the switch are 7-12 and 31-36 only. These are separate networks. Your DHCP server cannot reach 192.168.40.x clients. Do not change the scope range without instructor approval[cite: 6].</p>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">DHCP role installed and authorized[cite: 6]</li>
+            <li contenteditable="true">Scope 172.16.100.50–.100 created[cite: 6]</li>
+            <li contenteditable="true">Exclusions added for static devices[cite: 6]</li>
+            <li contenteditable="true">Test machine receives lease and has connectivity[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 2-D: Shared Folders, Drive Mapping & Group Policy</h3>
+        <p contenteditable="true">You will create shared folders with appropriate permissions, then use Group Policy to automatically map them for domain users[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">On DC01, create two shared folders on the D: drive: one named Staff (accessible to all domain users, read only) and one named IT (accessible only to members of the IT OU, full control)[cite: 6].</li>
+            <li contenteditable="true">For each folder, configure both Share permissions and NTFS permissions. Document what each permission level does and why both matter[cite: 6].</li>
+            <li contenteditable="true">In Group Policy Management, create a new GPO named Drive Mapping. Link it to the Students OU. Configure it to map \\DC01\Staff to the Z: drive for all domain users[cite: 6].</li>
+            <li contenteditable="true">Test by logging into a domain-joined machine as studentB. Verify the Z: drive appears. If it does not, use <code>gpupdate /force</code> and troubleshoot[cite: 6].</li>
+            <li contenteditable="true">Create a second GPO that sets a desktop wallpaper of your choice for all domain computers. Verify it applies[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Staff and IT shares created with correct permissions[cite: 6]</li>
+            <li contenteditable="true">Drive mapping GPO created and linked[cite: 6]</li>
+            <li contenteditable="true">Z: drive appears on domain client machines[cite: 6]</li>
+            <li contenteditable="true">Wallpaper GPO confirmed applying[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 2-E: Connecting the MacBook Air</h3>
+        <p contenteditable="true">Your MacBook Air must connect to the lab.local domain and access shared resources. This requires specific configuration on both the Mac and the server[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Configure the MacBook Air with a static IP: 172.16.100.40 / 255.255.255.0. Gateway: 172.16.100.1. DNS: 172.16.100.10[cite: 6].</li>
+            <li contenteditable="true">Verify the Mac can ping DC01 by IP and by hostname (ping dc01.lab.local)[cite: 6].</li>
+            <li contenteditable="true">Join the Mac to lab.local using Directory Utility. Research the correct method for your macOS version[cite: 6].</li>
+            <li contenteditable="true">Log into the Mac using the studentA domain account. Confirm the home folder is created[cite: 6].</li>
+            <li contenteditable="true">From Finder, connect to the Staff share (Go > Connect to Server > smb://dc01/staff). Map it and verify file access[cite: 6].</li>
+            <li contenteditable="true">Document any errors encountered and how you resolved them. Mac-to-Windows SMB connections frequently have compatibility issues — research the common causes[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Mac joined to lab.local[cite: 6]</li>
+            <li contenteditable="true">Domain login successful on Mac[cite: 6]</li>
+            <li contenteditable="true">SMB share accessible from Finder[cite: 6]</li>
+            <li contenteditable="true">Errors and resolutions documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <h2 contenteditable="true">Phase 3 — Remote Access, Security & Web Services (Weeks 7–9)</h2>
+
+    <div>
+        <h3 contenteditable="true">Lab 3-A: Remote Desktop Protocol (RDP)</h3>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Enable RDP on DC01 via System Properties > Remote[cite: 6].</li>
+            <li contenteditable="true">Add both studentA and studentB to the Remote Desktop Users group[cite: 6].</li>
+            <li contenteditable="true">From Student B's machine, connect to DC01 using the Remote Desktop Connection client (mstsc). Log in as studentA[cite: 6].</li>
+            <li contenteditable="true">Test clipboard redirection and drive redirection within the RDP session[cite: 6].</li>
+            <li contenteditable="true">Research and document: what port does RDP use by default? How would you change it? What are the security implications?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">RDP enabled on DC01[cite: 6]</li>
+            <li contenteditable="true">Domain users added to Remote Desktop Users group[cite: 6]</li>
+            <li contenteditable="true">Successful RDP session from Student B's machine[cite: 6]</li>
+            <li contenteditable="true">Clipboard and drive redirection tested[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 3-B: IIS Web Server & HTTPS with Certificate Manager</h3>
+        <p contenteditable="true">You will install IIS, create a website, generate a self-signed certificate, and configure HTTPS. This lab covers the full certificate lifecycle in a controlled environment[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Install the Web Server (IIS) role on DC01 via Server Manager[cite: 6].</li>
+            <li contenteditable="true">Browse to http://dc01 from a domain-joined client machine. Document what you see and why it works without further configuration[cite: 6].</li>
+            <li contenteditable="true">Create a simple HTML file and place it in the IIS default website root. Verify it displays in a browser[cite: 6].</li>
+            <li contenteditable="true">Open IIS Manager. Navigate to Server Certificates. Create a self-signed certificate. Name it DC01 Lab Cert[cite: 6].</li>
+            <li contenteditable="true">Add an HTTPS binding to the default website on port 443. Assign the certificate you just created[cite: 6].</li>
+            <li contenteditable="true">Browse to https://dc01 from a client machine. A security warning will appear. Document exactly what the warning says and why it appears[cite: 6].</li>
+            <li contenteditable="true">Export the certificate from the server. Import it into the Trusted Root Certification Authorities store on a client machine using certmgr.msc. Verify the browser warning disappears[cite: 6].</li>
+            <li contenteditable="true">In your documentation, explain: what makes a certificate trusted? What is the difference between a self-signed certificate and one issued by a Certificate Authority?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">IIS installed and default page loading[cite: 6]</li>
+            <li contenteditable="true">Custom HTML page served over HTTP[cite: 6]</li>
+            <li contenteditable="true">Self-signed certificate created[cite: 6]</li>
+            <li contenteditable="true">HTTPS binding configured on port 443[cite: 6]</li>
+            <li contenteditable="true">Certificate imported and HTTPS warning resolved on client[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 3-C: Proxy Server Configuration</h3>
+        <p contenteditable="true">OptiPlex 3020 #2 will be configured as a proxy server. Lab clients will route their internet traffic through it. This simulates a common enterprise security architecture[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">On OptiPlex #2, join it to the lab.local domain. Set its static IP to 172.16.100.50[cite: 6].</li>
+            <li contenteditable="true">Install a proxy server application on OptiPlex #2. Research available options for Windows and select an appropriate one. Document your choice and why[cite: 6].</li>
+            <li contenteditable="true">Configure the proxy to listen on port 3128 (or the default for your chosen application)[cite: 6].</li>
+            <li contenteditable="true">On a client machine, configure the browser and system proxy settings to point to 172.16.100.50 on the appropriate port[cite: 6].</li>
+            <li contenteditable="true">Verify that the client can reach the internet through the proxy. Verify that if the proxy service is stopped, the client loses internet access[cite: 6].</li>
+            <li contenteditable="true">Review the proxy logs. Document what information is recorded about client requests[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Proxy application installed on OptiPlex #2[cite: 6]</li>
+            <li contenteditable="true">Client proxy settings configured[cite: 6]</li>
+            <li contenteditable="true">Internet access confirmed through proxy[cite: 6]</li>
+            <li contenteditable="true">Proxy log entries reviewed and documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 3-D: WinRM Remote Management</h3>
+        <p contenteditable="true">Windows Remote Management (WinRM) allows command-line remote administration of Windows machines using PowerShell[cite: 6].</p>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">On DC01, open an elevated PowerShell window. Run <code>winrm quickconfig</code> and accept all prompts. Document what changes it makes[cite: 6].</li>
+            <li contenteditable="true">From a domain-joined client machine, open PowerShell. Connect to DC01 remotely using <code>Enter-PSSession</code>[cite: 6].</li>
+            <li contenteditable="true">Once connected, run at least three commands remotely: check running services, view event log entries, and check disk space. Document the commands and output[cite: 6].</li>
+            <li contenteditable="true">Use <code>Invoke-Command</code> to run a script block on DC01 without entering an interactive session. Document the difference between Enter-PSSession and Invoke-Command[cite: 6].</li>
+            <li contenteditable="true">Research and document: what firewall rule does WinRM require? How is WinRM different from RDP?[cite: 6]</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">WinRM configured on DC01[cite: 6]</li>
+            <li contenteditable="true">Remote PowerShell session established from client[cite: 6]</li>
+            <li contenteditable="true">Remote commands executed and documented[cite: 6]</li>
+            <li contenteditable="true">Difference between Enter-PSSession and Invoke-Command explained[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <h2 contenteditable="true">Phase 4 — Print Server, Backups & Final Assessment (Weeks 10–12)</h2>
+
+    <div>
+        <h3 contenteditable="true">Lab 4-A: Print Server</h3>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Connect the lab printer to DC01 (USB or network port — check with your instructor)[cite: 6].</li>
+            <li contenteditable="true">Install the Print and Document Services role in Server Manager[cite: 6].</li>
+            <li contenteditable="true">Add and share the printer as labprinter. The share path will be \\DC01\labprinter[cite: 6].</li>
+            <li contenteditable="true">Create a Group Policy Object named Lab Printer. Configure it to deploy \\DC01\labprinter to all machines in the Students OU automatically[cite: 6].</li>
+            <li contenteditable="true">Verify that the printer appears on a domain-joined Windows client after running <code>gpupdate /force</code>[cite: 6].</li>
+            <li contenteditable="true">On the MacBook Air, add the printer manually via System Preferences > Printers & Scanners. Use smb://dc01/labprinter as the address. Print a test page[cite: 6].</li>
+            <li contenteditable="true">Simulate a stuck print job. Clear the print queue by stopping and restarting the Print Spooler service. Document the commands used[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Print and Document Services role installed[cite: 6]</li>
+            <li contenteditable="true">Printer shared as labprinter[cite: 6]</li>
+            <li contenteditable="true">GPO deploys printer to domain clients[cite: 6]</li>
+            <li contenteditable="true">Mac can print via SMB[cite: 6]</li>
+            <li contenteditable="true">Print spooler restart procedure documented[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 4-B: Server Backup & Recovery</h3>
+        <p contenteditable="true"><strong>Your tasks:</strong></p>
+        <ul>
+            <li contenteditable="true">Install the Windows Server Backup feature on DC01[cite: 6].</li>
+            <li contenteditable="true">Perform a full backup to an external drive or network share. Document the backup destination, size, and duration[cite: 6].</li>
+            <li contenteditable="true">Schedule a recurring backup to run daily. Verify the scheduled task appears in Task Scheduler[cite: 6].</li>
+            <li contenteditable="true">Delete a file from the D: drive share. Use Windows Server Backup to recover it. Document the recovery steps[cite: 6].</li>
+            <li contenteditable="true">Export your Active Directory configuration using one of the following: ntdsutil, wbadmin, or the Active Directory Sites and Services backup option. Document which method you chose and why[cite: 6].</li>
+            <li contenteditable="true">Export your IIS configuration using the appcmd command-line tool. Save the output file to D:\Backups[cite: 6].</li>
+            <li contenteditable="true">Back up all GPOs using the Group Policy Management Console (GPMC). Save them to D:\Backups\GPO[cite: 6].</li>
+        </ul>
+        <p contenteditable="true"><strong>Verification checklist:</strong></p>
+        <ul>
+            <li contenteditable="true">Full server backup completed[cite: 6]</li>
+            <li contenteditable="true">Scheduled daily backup configured[cite: 6]</li>
+            <li contenteditable="true">File recovery from backup successful[cite: 6]</li>
+            <li contenteditable="true">AD, IIS, and GPO configurations exported[cite: 6]</li>
+        </ul>
+    </div>
+    <hr>
+
+    <div>
+        <h3 contenteditable="true">Lab 4-C: Final Assessment</h3>
+        <p contenteditable="true">Consult your instructor for the final scenario[cite: 6].</p>
+        <ul>
+            <li contenteditable="true">Your instructor will provide the details of the final assessment when the time comes[cite: 6].</li>
+            <li contenteditable="true">Make sure your lab documentation binder is complete and up to date[cite: 6].</li>
+            <li contenteditable="true">Review all IP addresses, credentials, share paths, and service names from your notes[cite: 6].</li>
+        </ul>
+    </div>
+    <hr>
+    <p contenteditable="true"><em>CompTIA A+ Core 2 (220-1202) Lab Program | Student A | Instructor copy: answer key provided separately</em>[cite: 6]</p>
+
+</body>
+</html>
